@@ -16,6 +16,8 @@ namespace ConsoleTest
             Console.Write("Введите номер группы: ");
             string group = Console.ReadLine();
 
+            List<StudentInfo>  filterStudents = Operations.FindByGroup(students, group);
+
 
             Console.ReadKey();
         }
