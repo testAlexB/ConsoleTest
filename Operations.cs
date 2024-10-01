@@ -38,7 +38,7 @@ namespace Lab_1
                 Сумма += Балл;
             }
 
-            return Сумма / Оценки.Count;
+            return (double)Сумма / (double)Оценки.Count;
         }
 
         /// <summary>
@@ -54,12 +54,12 @@ namespace Lab_1
 
             if(b1 > b2) 
             {
-                return 1;
+                return -1;
             }
 
             if (b1 == b2) return 0;
 
-            return -1;
+            return 1;
         }
     }
 }

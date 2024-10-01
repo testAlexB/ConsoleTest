@@ -17,7 +17,19 @@ namespace ConsoleTest
             string group = Console.ReadLine();
 
             List<StudentInfo>  filterStudents = Operations.FindByGroup(students, group);
-            filterStudents.Sort(Operations.CompareStudentsByAvgBall);
+            if (filterStudents.Count == 0)
+            {
+                Console.WriteLine("В такой группе студенты отсутсвуют !!!");
+            }
+            else
+            {
+                filterStudents.Sort(Operations.CompareStudentsByAvgBall);
+
+                foreach (StudentInfo student in filterStudents)
+                {
+                    Console.WriteLine($"{student.ФИО}: средний балл =  {Operations.AverageBall(student.Оценки)}");
+                }
+            }
 
 
             Console.ReadKey();
