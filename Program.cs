@@ -17,6 +17,7 @@ namespace ConsoleTest
             string group = Console.ReadLine();
 
             List<StudentInfo>  filterStudents = Operations.FindByGroup(students, group);
+            filterStudents.Sort(Operations.CompareStudentsByAvgBall);
 
 
             Console.ReadKey();
