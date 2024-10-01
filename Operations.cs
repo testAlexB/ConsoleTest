@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.XPath;
+﻿using System.Collections.Generic;
 
 namespace ConsoleTest
 {
@@ -44,6 +39,27 @@ namespace ConsoleTest
             }
 
             return Сумма / Оценки.Count;
+        }
+
+        /// <summary>
+        /// Функция сравнения двух студентов по среднему баллу
+        /// </summary>
+        /// <param name="student1">Информация о каком-то студенте из списка</param>
+        /// <param name="student2">Информация о другом студенте списка (выбранного в качестве сравнения)</param>
+        /// <returns>1 - student1 успешнее student2, 0 - их успех одинаков, -1 - student1 отстаёт от student2</returns>
+        static public int CompareStudentsByAvgBall(StudentInfo student1, StudentInfo student2)
+        {
+            double b1 = AverageBall(student1.Оценки);
+            double b2 = AverageBall(student2.Оценки);
+
+            if(b1 > b2) 
+            {
+                return 1;
+            }
+
+            if (b1 == b2) return 0;
+
+            return -1;
         }
     }
 }
