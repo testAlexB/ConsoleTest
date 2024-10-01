@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ConsoleTest
+namespace Lab_1
 {
     public class Operations
     {
