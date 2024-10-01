@@ -30,6 +30,20 @@ namespace ConsoleTest
             return result;
         }
 
+        /// <summary>
+        /// Функция вычисления среднего балла студента
+        /// </summary>
+        /// <param name="Оценки">Содержит список целочисленных значений, содержащие оценки по предметам</param>
+        /// <returns>Значение среднего балла</returns>
+        static public double AverageBall(List<int> Оценки)
+        {
+            int Сумма = 0;
+            foreach (int Балл in Оценки)
+            {
+                Сумма += Балл;
+            }
 
+            return Сумма / Оценки.Count;
+        }
     }
 }
